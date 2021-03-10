@@ -13,8 +13,117 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <property name="styleSheet">
+   <string notr="true">QDial {
+	background-color: #008000
+}
+
+QAbstractSlider:sliderPressed{
+	background-color: #ffffff
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QDial" name="minutesDial">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>200</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDial" name="secondsDial">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>200</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>60</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nameLabel">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>10</y>
+      <width>255</width>
+      <height>43</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>36</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Sleep Timer App</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="minutesLabel">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>130</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Minutes</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="secondsLabel">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>130</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Seconds</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="minutesBox">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>170</y>
+      <width>42</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="secondsBox">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>160</y>
+      <width>42</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="startButton">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>400</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>

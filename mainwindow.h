@@ -14,6 +14,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void refreshDisplays();
+
+private slots:
+
+    void on_minutesDial_valueChanged(int value);
+
+    void on_secondsDial_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
