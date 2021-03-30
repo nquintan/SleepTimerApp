@@ -22,6 +22,8 @@ private slots:
 
     void on_secondsDial_valueChanged(int value);
 
+    void on_startButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

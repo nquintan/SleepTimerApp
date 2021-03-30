@@ -1,14 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "timer.h"
+#include "iostream"
+#include "ui_countdown.h"
 
-double minutesValue = 0;
-double secondsValue = 0;
+timer* sleepTimer = new timer;
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    ui->minutesBox->setValue(minutesValue);
-    ui->secondsBox->setValue(secondsValue);
+    ui->minutesBox->setValue(sleepTimer->getMin());
+    ui->secondsBox->setValue(sleepTimer->getSec());
 }
 
 MainWindow::~MainWindow() {
@@ -16,16 +18,21 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::on_minutesDial_valueChanged(int value) {
-    minutesValue = value;
+    sleepTimer->setMin(value);
     refreshDisplays();
 }
 
 void MainWindow::on_secondsDial_valueChanged(int value) {
-    secondsValue = value;
+    sleepTimer->setSec(value);
     refreshDisplays();
 }
 
 void MainWindow::refreshDisplays() {
-    ui->minutesBox->setValue(minutesValue);
-    ui->secondsBox->setValue(secondsValue);
+    ui->minutesBox->setValue(sleepTimer->getMin());
+    ui->secondsBox->setValue(sleepTimer->getSec());
+}
+
+void MainWindow::on_startButton_clicked() {
+    std::cout << "Start Button Click" << std::endl;
+    hide();
 }
